@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ThriftandThrive</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="login">Login</string>
+    <string name="forget">Forget ?</string>
+
+
+    <string name="sign_up">Register</string>
+    <string name="cart">Cart</string>
+    <string name="favourites">Favourites</string>
+    <string name="categories">Categories</string>
+
+    <!--    sharedpref keys-->
+    <string name="isLoggedKey">isll</string>
+    <string name="thrift_thrive"><![CDATA[Thrift&Thrive]]></string>
+    <string name="home">Home</string>
+    <string name="name_key">nk</string>
+    <string name="isLogged">iL</string>
+    <string name="email_id">ei</string>
+    <string name="created_key">ck</string>
+    <string name="api_key">ak</string>
+
+</resources>
