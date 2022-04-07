@@ -1,6 +1,7 @@
 package com.example.thriftandthrive.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -28,4 +29,11 @@ public class SharedPrefUtils {
         editor.apply();
     }
 
+    public static void setString(Context context, int api_key) {
+    }
+
+    public static void clear(Context context) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPref.edit().clear().commit();
+    }
 }

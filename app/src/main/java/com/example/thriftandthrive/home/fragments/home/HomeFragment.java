@@ -163,7 +163,7 @@ public class HomeFragment extends Fragment {
     private void setProductRecylerView(List<Product> products) {
         allProductRV.setHasFixedSize(true);
         allProductRV.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext());
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false);
         allProductRV.setAdapter(shopAdapter);
     }
 

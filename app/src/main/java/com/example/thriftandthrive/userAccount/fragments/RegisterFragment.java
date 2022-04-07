@@ -22,37 +22,39 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterFragment extends Fragment {
-
-    EditText emailET, passwordET, confirmPassET, nameET;
+    EditText emailET, passwordET, confirmPasswordET, nameET;
     LinearLayout registerLL;
     ProgressBar circularProgress;
 
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_register, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         emailET = view.findViewById(R.id.emailET);
         nameET = view.findViewById(R.id.nameET);
         passwordET = view.findViewById(R.id.passwordET);
-        confirmPassET = view.findViewById(R.id.confirmPassET);
+        confirmPasswordET = view.findViewById(R.id.confirmPassET);
         circularProgress = view.findViewById(R.id.circularProgress);
         registerLL = view.findViewById(R.id.registerLL);
         registerLL.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                toggleLoading(true);
+            public void onClick(View v) {
                 if (validate()) {
+                    toggleLoading(true);
                     Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString());
                     registerCall.enqueue(new Callback<RegisterResponse>() {
                         @Override
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                             RegisterResponse registerResponse = response.body();
+                            toggleLoading(false);
                             if (response.isSuccessful()) {
                                 Toast.makeText(getActivity(), registerResponse.getMessage(), Toast.LENGTH_SHORT).show();
                                 if (!registerResponse.getError()) {
@@ -62,19 +64,20 @@ public class RegisterFragment extends Fragment {
                             }
                         }
 
-
                         @Override
                         public void onFailure(Call<RegisterResponse> call, Throwable t) {
                             toggleLoading(false);
                             Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
                         }
-
                     });
-                }
 
+                }
             }
         });
+
     }
+
     void toggleLoading(Boolean toogle) {
         if (toogle)
             circularProgress.setVisibility(View.VISIBLE);
@@ -82,16 +85,16 @@ public class RegisterFragment extends Fragment {
             circularProgress.setVisibility(View.GONE);
     }
 
-    private boolean validate() {
+    public boolean validate() {
         boolean validate = true;
         if (emailET.getText().toString().isEmpty()
                 || passwordET.getText().toString().isEmpty()
-                || confirmPassET.getText().toString().isEmpty()
+                || confirmPasswordET.getText().toString().isEmpty()
                 || nameET.getText().toString().isEmpty()) {
             Toast.makeText(getActivity(), "None of the above fields can be empty", Toast.LENGTH_SHORT).show();
             validate = false;
-        } else if (!passwordET.getText().toString().equals(confirmPassET.getText().toString())) {
-            confirmPassET.setError("Password does not match please check!!");
+        } else if (!passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
+            confirmPasswordET.setError("Password doesnot match please check!!");
             validate = false;
 
         }
@@ -100,3 +103,82 @@ public class RegisterFragment extends Fragment {
     }
 
 }
+//public class RegisterFragment extends Fragment {
+//
+//    EditText emailET, passwordET, confirmPassET, nameET;
+//    LinearLayout registerLL;
+//    ProgressBar circularProgress;
+//
+//
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_register, container, false);
+//    }
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//        emailET = view.findViewById(R.id.emailET);
+//        nameET = view.findViewById(R.id.nameET);
+//        passwordET = view.findViewById(R.id.passwordET);
+//        confirmPassET = view.findViewById(R.id.confirmPassET);
+//        circularProgress = view.findViewById(R.id.circularProgress);
+//        registerLL = view.findViewById(R.id.registerLL);
+//        registerLL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toggleLoading(true);
+//                if (validate()) {
+//                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString());
+//                    registerCall.enqueue(new Callback<RegisterResponse>() {
+//                        @Override
+//                        public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+//                            RegisterResponse registerResponse = response.body();
+//                            if (response.isSuccessful()) {
+//                                Toast.makeText(getActivity(), registerResponse.getMessage(), Toast.LENGTH_SHORT).show();
+//                                if (!registerResponse.getError()) {
+//                                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.formContainerFL, new LoginFragment()).commit();
+//
+//                                }
+//                            }
+//                        }
+//
+//
+//                        @Override
+//                        public void onFailure(Call<RegisterResponse> call, Throwable t) {
+//                            toggleLoading(false);
+//                            Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                    });
+//                }
+//
+//            }
+//        });
+//    }
+//    void toggleLoading(Boolean toogle) {
+//        if (toogle)
+//            circularProgress.setVisibility(View.VISIBLE);
+//        else
+//            circularProgress.setVisibility(View.GONE);
+//    }
+//
+//    private boolean validate() {
+//        boolean validate = true;
+//        if (emailET.getText().toString().isEmpty()
+//                || passwordET.getText().toString().isEmpty()
+//                || confirmPassET.getText().toString().isEmpty()
+//                || nameET.getText().toString().isEmpty()) {
+//            Toast.makeText(getActivity(), "None of the above fields can be empty", Toast.LENGTH_SHORT).show();
+//            validate = false;
+//        } else if (!passwordET.getText().toString().equals(confirmPassET.getText().toString())) {
+//            confirmPassET.setError("Password does not match please check!!");
+//            validate = false;
+//
+//        }
+//
+//        return validate;
+//    }
+//
+//}

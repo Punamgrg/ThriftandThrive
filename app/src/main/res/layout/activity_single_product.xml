@@ -127,7 +127,10 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/normaLspacing"
+        android:layout_marginStart="@dimen/normaLspacing"
+        android:layout_marginTop="@dimen/normaLspacing"
+        android:layout_marginEnd="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
         android:background="@drawable/rect_box"
         android:gravity="center">
 

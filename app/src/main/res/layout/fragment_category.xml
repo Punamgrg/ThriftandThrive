@@ -5,11 +5,38 @@
     android:layout_height="match_parent"
     tools:context=".home.fragments.CategoryFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fullCatRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/normaLspacing"
+        android:layout_marginTop="50dp"
         />
 
 

@@ -29,6 +29,10 @@ public class Product implements Serializable {
     @SerializedName("categories")
     @Expose
     private List<Integer> categories = null;
+    @SerializedName("cart_id")
+    @Expose
+    private Integer cartID;
+
 
     public Integer getId() {
         return id;
@@ -86,5 +90,8 @@ public class Product implements Serializable {
         this.categories = categories;
     }
 
+    public int getCartID() {
+        return cartID;
+    }
 }
 

@@ -1,5 +1,6 @@
 package com.example.thriftandthrive.api;
 
+import com.example.thriftandthrive.api.response.AddressResponse;
 import com.example.thriftandthrive.api.response.AllProductResponse;
 import com.example.thriftandthrive.api.response.CategoryResponse;
 import com.example.thriftandthrive.api.response.LoginResponse;
@@ -36,10 +37,26 @@ public interface ApiService {
     @GET("ecommerce/api/v1/get-products-by-category")
     Call<AllProductResponse> getProductsByCategory(@Query("c_id") int catID);
 
+    @FormUrlEncoded
+    @POST("ecommerce/api/v1/cart")
+    Call<RegisterResponse> addToCart(@Header("api_key") String apikey, @Field("p_id") int p);
+
     @GET("ecommerce/api/v1/cart")
-    Call<AllProductResponse>getMyCart(@Header("Apikey") String apikey);
+    Call<AllProductResponse>getMyCart(@Header("api_key") String apikey);
 
     @DELETE("ecommerce/api/v1/cart")
-    Call<RegisterResponse> deleteFromCart(@Header("Apikey") String apikey, @Query("c_id") int cartID);
+    Call<RegisterResponse> deleteFromCart(@Header("api_key") String apikey, @Query("c_id") int cartID);
+
+    @GET("/api/v1/address")
+    Call<AddressResponse> getMyAddresses(@Header("Apikey") String apikey);
+
+    @FormUrlEncoded
+    @POST("/api/v1/order")
+    Call<RegisterResponse> order(@Header("Apikey") String apikey,
+                                 @Field("p_type") int p_type,
+                                 @Field("address_id") int address_id,
+                                 @Field("payment_refrence") String paymentRefrence);
+
+
 
 }

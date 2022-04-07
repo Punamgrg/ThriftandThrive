@@ -3,4 +3,5 @@
     <dimen name="normaLspacing">14dp</dimen>
     <dimen name="largeSpacing">20dp</dimen>
     <dimen name="smallSpacing">5dp</dimen>
+    <dimen name="medium_spacing">8dp</dimen>
 </resources>

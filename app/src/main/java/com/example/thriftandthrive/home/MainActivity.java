@@ -13,6 +13,7 @@ import com.example.thriftandthrive.R;
 import com.example.thriftandthrive.home.fragments.CartFragment;
 import com.example.thriftandthrive.home.fragments.CategoryFragment;
 import com.example.thriftandthrive.home.fragments.FavouritesFragment;
+import com.example.thriftandthrive.home.fragments.MoreFragment;
 import com.example.thriftandthrive.home.fragments.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     CartFragment cartFragment;
     FavouritesFragment favouritesFragment;
     CategoryFragment categoryFragment;
+    MoreFragment moreFragment;
     Fragment currentFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.WHITE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bottomNavigationView = findViewById(R.id.homeBottomNav);
+        bottomNavigationView = findViewById(R.id.mainBottomNav);
         homeFragment = new HomeFragment();
         currentFragment = homeFragment;
-        getSupportFragmentManager().beginTransaction().add(R.id.homeContainer, homeFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.mainFrame, homeFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
 
@@ -67,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(categoryFragment);
                     return true;
                 }
+                if (item.getTitle().equals(getString(R.string.more))){
+                    if (moreFragment== null)
+                        moreFragment = new MoreFragment();
+                    changeFragment(moreFragment);
+                    return true;
+                }
 //                if (item.getTitle().equals(getString(R.string.ca)) {
 //                    if (favouritesFragment == null)
 //                        favouritesFragment = new FavouritesFragment();
@@ -86,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment.isAdded()) {
             getSupportFragmentManager().beginTransaction().show(fragment).commit();
         } else {
-            getSupportFragmentManager().beginTransaction().add(R.id.homeContainer, fragment).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.mainFrame, fragment).commit();
         }
         currentFragment = fragment;
     }

@@ -17,11 +17,11 @@ import com.example.thriftandthrive.R;
 import com.example.thriftandthrive.api.ApiClient;
 import com.example.thriftandthrive.api.response.LoginResponse;
 import com.example.thriftandthrive.home.MainActivity;
+import com.example.thriftandthrive.utils.SharedPrefUtils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
     EditText emailEt, passwordET;
@@ -54,9 +54,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                     LoginResponse loginResponse = response.body();
                     if (response.isSuccessful()) {
-                        Toast.makeText(getActivity(), "You'" + "re successfully logged in", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
+                        if(!response.body().getError()){
+                            Toast.makeText(getActivity(), "You'" + "re successfully logged in", Toast.LENGTH_SHORT).show();
+                            SharedPrefUtils.setString(getActivity(),getString(R.string.api_key),loginResponse.getApiKey());
+                           // Toast.makeText(getActivity(),SharedPrefUtils.getString(getActivity(),getString(R.string.api_key)),Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
 //
                     }
                 }

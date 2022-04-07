@@ -4,14 +4,19 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.api.ApiClient;
 import com.example.thriftandthrive.api.response.Product;
+import com.example.thriftandthrive.api.response.RegisterResponse;
 import com.example.thriftandthrive.api.response.Slider;
 import com.example.thriftandthrive.home.fragments.home.adapters.SliderAdapter;
+import com.example.thriftandthrive.utils.SharedPrefUtils;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -19,12 +24,18 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SingleProductActivity extends AppCompatActivity {
     public static String key = "pKey";
     Product product;
     SliderView imageSlider;
     ImageView backIV;
     TextView name, price, desc, oldPrice;
+    LinearLayout addToCartLL;
+    boolean isAdding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,8 @@ public class SingleProductActivity extends AppCompatActivity {
         price = findViewById(R.id.productPriceTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         desc = findViewById(R.id.decTV);
+        addToCartLL = findViewById(R.id.addToCartLL);
+
         setOnclickListners();
         if (getIntent().getSerializableExtra(key) != null) {
             product = (Product) getIntent().getSerializableExtra(key);
@@ -86,11 +99,39 @@ public class SingleProductActivity extends AppCompatActivity {
     }
 
     private void setOnclickListners() {
-        backIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
+        backIV.setOnClickListener(v -> finish());
+
+
+        addToCartLL.setOnClickListener(v -> {
+
+            if (!isAdding) {
+                isAdding = true;
+
+                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
+                Call<RegisterResponse> cartCall = ApiClient.getClient().addToCart(key, product.getId());
+                cartCall.enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                        isAdding = false;
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                        isAdding = false;
+                    }
+                });
+            } else {
+                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
+
+
 }
+

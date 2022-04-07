@@ -24,18 +24,20 @@ public class ShopAdapter extends RecyclerView.Adapter <ShopAdapter.ShopViewholde
     LayoutInflater layoutInflater;
     Context context;
     Boolean isCart = false;
-    CartItemclick cartItemclick;
+    CartItemClick cartItemclick;
     Boolean removeEnabled = true;
 
 
-    public ShopAdapter(List<Product> productDataList, Context context) { //then yo type garney
+    public ShopAdapter(List<Product> productDataList, Context context, Boolean isCart) { //then yo type garney
         this.productDataList = productDataList;
         this.context = context;
        layoutInflater = LayoutInflater.from(context); //inflater vaneko tasney
         this.isCart = isCart;
    }
 
-    public void setCartItemClick(CartItemclick cartItemClick) {
+
+
+    public void setCartItemClick(CartItemClick cartItemClick) {
         this.cartItemclick = cartItemClick;
     }
 
@@ -49,7 +51,7 @@ public class ShopAdapter extends RecyclerView.Adapter <ShopAdapter.ShopViewholde
     @Override
     public ShopViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (isCart)
-            return new ShopViewholder(layoutInflater.inflate(R.layout.products, parent, false));
+            return new ShopViewholder(layoutInflater.inflate(R.layout.item_cart, parent, false));
         else
             return new ShopViewholder(layoutInflater.inflate(R.layout.products, parent, false));
     }
@@ -59,11 +61,11 @@ public class ShopAdapter extends RecyclerView.Adapter <ShopAdapter.ShopViewholde
         holder.nameTV.setText(productDataList.get(position).getName());
         if(productDataList.get(position).getDiscountPrice() == null || productDataList.get(position).getDiscountPrice()== 0){
             holder.priceTv.setVisibility(View.GONE);
-            holder.discountPrice.setText(productDataList.get(position).getPrice()+"");
+            holder.discountPrice.setText("Rs. "+productDataList.get(position).getPrice()+"");
         }
         else
-            holder.discountPrice.setText(productDataList.get(position).getDiscountPrice()+"");
-        holder.priceTv.setText(productDataList.get(position).getPrice()+"");
+            holder.discountPrice.setText("Rs. "+productDataList.get(position).getDiscountPrice()+"");
+        holder.priceTv.setText("Rs. "+productDataList.get(position).getPrice()+"");
 
         Picasso.get().load(productDataList.get(position).getImages().get(0)).into(holder.productIV);
         holder.mainLL.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +81,7 @@ public class ShopAdapter extends RecyclerView.Adapter <ShopAdapter.ShopViewholde
                 holder.removeCartIV.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cartItemclick.onremoveCart(holder.getAdapterPosition());
+                        cartItemclick.onRemoveCart(holder.getAdapterPosition());
                     }
                 });
             else {
@@ -124,9 +126,11 @@ public class ShopAdapter extends RecyclerView.Adapter <ShopAdapter.ShopViewholde
         }
     }
 
-    private interface CartItemclick {
-        public void onremoveCart(int position);
+    public interface CartItemClick {
+        public void onRemoveCart(int position);
     }
+
+
 }
 
 //    @Override
