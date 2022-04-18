@@ -30,6 +30,8 @@ import retrofit2.Response;
 
 public class SingleProductActivity extends AppCompatActivity {
     public static String key = "pKey";
+    public static String DATA_KEY = "ds";
+    public static String SINGLE_DATA_KEY = "sds";
     Product product;
     SliderView imageSlider;
     ImageView backIV;

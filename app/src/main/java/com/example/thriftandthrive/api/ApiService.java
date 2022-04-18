@@ -58,5 +58,12 @@ public interface ApiService {
                                  @Field("payment_refrence") String paymentRefrence);
 
 
-
+    @FormUrlEncoded
+    @POST("/api/v1/address")
+    Call<AddressResponse> address(
+            @Header("api_key") String apikey,
+            @Field("city") String city,
+            @Field("street") String street,
+            @Field("description") String description,
+            @Field("province") String province);
 }

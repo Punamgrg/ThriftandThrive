@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +25,7 @@ import retrofit2.Response;
 
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
+    TextView AddAddressTV;
     public static String ADDRESS_SELECTED_KEY = "DFa";
 
     @Override
@@ -33,7 +36,18 @@ public class AddressActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Select Address");
+        addAddressOnClick();
         getAddressOnline();
+    }
+
+    private void addAddressOnClick() {
+        AddAddressTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddressActivity.this, AddAddressActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getAddressOnline() {

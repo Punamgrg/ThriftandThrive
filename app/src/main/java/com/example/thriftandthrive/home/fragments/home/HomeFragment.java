@@ -1,11 +1,14 @@
 package com.example.thriftandthrive.home.fragments.home;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +29,9 @@ import com.example.thriftandthrive.api.response.SliderResponse;
 import com.example.thriftandthrive.home.fragments.home.adapters.CategoryAdapter;
 import com.example.thriftandthrive.home.fragments.home.adapters.ShopAdapter;
 import com.example.thriftandthrive.home.fragments.home.adapters.SliderAdapter;
+import com.example.thriftandthrive.search.SearchActivity;
 import com.example.thriftandthrive.utils.DataHolder;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -42,7 +47,11 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
+    TextView viewAllTV, searchIt;
+    LinearLayout searchLL;
     SliderView imageSlider;
+    BottomNavigationView bottomNavigationView;
+    TextView nameTV;
 
 
     @Override
@@ -50,6 +59,14 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+//    public void setBottomNavigationView(BottomNavigationView bottomNavigationView) {
+//        this.bottomNavigationView = bottomNavigationView;
+//    }
+    public  void setBottomNavigationView(BottomNavigationView bottomNavigationView)
+    {
+        this.bottomNavigationView = bottomNavigationView;
+
     }
 
     @Override
@@ -59,13 +76,53 @@ public class HomeFragment extends Fragment {
         categoryRV = view.findViewById(R.id.categoryRV);
         loadingProgress = view.findViewById(R.id.loadingProgress);
         imageSlider = view.findViewById(R.id.imageSlider);
+        viewAllTV = view.findViewById(R.id.viewALLTV);
+        searchLL = view.findViewById(R.id.searchLL);
+        searchIt = view.findViewById(R.id.searchIt);
         serverCall();
         getCategoriesOnline();
         getSliders();
+        searchClickListeners();
+        setClickListeners();
 
 
     }
 
+    private void searchClickListeners() {
+        searchIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+
+            }
+        });
+    }
+
+    //    private void searchClickListeners() {
+//        searchIt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent= new Intent(getActivity(), SearchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
+    private void setClickListeners() {
+        viewAllTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomNavigationView.setSelectedItemId(R.id.categoryMenu);
+            }
+        });
+        searchLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+    }
     private void getSliders() {
         Call<SliderResponse> sliderResponseCall = ApiClient.getClient().getSliders();
         sliderResponseCall.enqueue((new Callback<SliderResponse>() {

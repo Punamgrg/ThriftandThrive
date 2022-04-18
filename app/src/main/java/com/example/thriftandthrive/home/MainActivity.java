@@ -34,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.WHITE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bottomNavigationView = findViewById(R.id.mainBottomNav);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.mainBottomNav);
         homeFragment = new HomeFragment();
+        homeFragment.setBottomNavigationView(bottomNavigationView);
         currentFragment = homeFragment;
         getSupportFragmentManager().beginTransaction().add(R.id.mainFrame, homeFragment).commit();
 
