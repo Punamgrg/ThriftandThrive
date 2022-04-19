@@ -87,10 +87,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="@dimen/normaLspacing"
-                android:text="is a unique shopping app with a distinctive tone focusing on
+                android:text="Thift anf Thrive is a unique shopping app with a distinctive tone focusing on
 women's fashion. We offer affordable products including women's clothing,
 accessories, shoes, bags and more. The brand was founded in 2015.
 Its business covers more than 220 countries and regions around the world.
@@ -114,7 +114,7 @@ Our vision is 'bringing happiness into every woman's life.'
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="Look Classy is on a mission to build an one-stop-shop for the modern yet economical

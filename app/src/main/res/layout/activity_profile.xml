@@ -265,28 +265,28 @@
 
 
 
-    <LinearLayout
-        android:id="@+id/editLL"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/profilebox_shape"
-        android:onClick="onLoginClicked"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/editTV"
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Edit Profile"
-            android:textColor="@color/ttcolor"
-            android:textSize="16sp"
-            android:drawableLeft="@drawable/ic_edit"
-            android:paddingStart="50dp"
-            android:layout_marginLeft="-20dp"/>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/editLL"-->
+<!--        android:layout_width="190dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:background="@drawable/profilebox_shape"-->
+<!--        android:onClick="onLoginClicked"-->
+<!--        android:orientation="vertical">-->
+<!--        <TextView-->
+<!--            android:id="@+id/editTV"-->
+<!--            android:layout_width="190dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Edit Profile"-->
+<!--            android:textColor="@color/ttcolor"-->
+<!--            android:textSize="16sp"-->
+<!--            android:drawableLeft="@drawable/ic_edit"-->
+<!--            android:paddingStart="50dp"-->
+<!--            android:layout_marginLeft="-20dp"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/changePasswordLL"
@@ -308,6 +308,28 @@
             android:drawableLeft="@drawable/ic_padlock"
             android:paddingStart="50dp"
             android:layout_marginLeft="-20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/updateprofileLL"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rect_box"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Update Profile"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
 
     </LinearLayout>
 

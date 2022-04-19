@@ -58,6 +58,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                             Toast.makeText(getActivity(), "You'" + "re successfully logged in", Toast.LENGTH_SHORT).show();
                             SharedPrefUtils.setString(getActivity(),getString(R.string.api_key),loginResponse.getApiKey());
                            // Toast.makeText(getActivity(),SharedPrefUtils.getString(getActivity(),getString(R.string.api_key)),Toast.LENGTH_SHORT).show();
+//                            getActivity().startActivity(new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class :MainActivity.class));
+//                            getActivity().finish();
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             startActivity(intent);
                         }else{

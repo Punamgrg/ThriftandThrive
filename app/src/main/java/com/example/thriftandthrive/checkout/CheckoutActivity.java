@@ -109,7 +109,12 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (address != null) {
-                    checkOut(subTotalPrice);
+                    if (p_type == 1) {
+                        checkOut();
+                    } else {
+                        khaltiCheckOut();
+                    }
+
                 } else {
                     Toast.makeText(CheckoutActivity.this, "Please Select A Address", Toast.LENGTH_SHORT).show();
                 }
@@ -211,7 +216,7 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     private void showSelectedAddress(Address address) {
-        address = address;
+        this.address = address;
         emptyAddressTv.setVisibility(View.GONE);
         cityStreetTV.setText(address.getCity() + " " + address.getStreet());
         provinceTV.setText(address.getProvince());

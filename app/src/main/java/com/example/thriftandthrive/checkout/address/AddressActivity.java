@@ -25,7 +25,7 @@ import retrofit2.Response;
 
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
-    TextView AddAddressTV;
+    TextView addAddressTV;
     public static String ADDRESS_SELECTED_KEY = "DFa";
 
     @Override
@@ -33,6 +33,7 @@ public class AddressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
         addressRV = findViewById(R.id.addressRV);
+        addAddressTV = findViewById(R.id.addAddressTV);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Select Address");
@@ -41,7 +42,7 @@ public class AddressActivity extends AppCompatActivity {
     }
 
     private void addAddressOnClick() {
-        AddAddressTV.setOnClickListener(new View.OnClickListener() {
+        addAddressTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddressActivity.this, AddAddressActivity.class);

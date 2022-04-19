@@ -86,6 +86,7 @@
         android:layout_marginBottom="@dimen/normaLspacing"
         android:layout_marginStart="@dimen/normaLspacing"
         android:layout_marginEnd="@dimen/normaLspacing"
+        android:layout_marginTop="20dp"
         android:text="Get in touch!"
         android:textColor="@color/black"
         android:gravity="center"

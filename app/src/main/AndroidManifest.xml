@@ -14,6 +14,21 @@
         android:theme="@style/Theme.ThriftandThrive"
         tools:replace="android:theme">
         <activity
+            android:name=".admin.products.ListProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addproduct.SelectCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addproduct.AddProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addcategory.ListCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="true" />
+        <activity
             android:name=".checkout.address.AddAddressActivity"
             android:exported="true" />
         <activity

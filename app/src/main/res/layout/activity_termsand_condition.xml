@@ -35,6 +35,7 @@
                 android:layout_gravity="center"
                 android:text="Terms and Condition"
                 android:textStyle="bold"
+                android:layout_marginStart="5dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
 
@@ -60,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="70dp"
                 android:text="TERMS AND CONDTION"
                 android:textSize="16dp"
@@ -69,8 +70,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="@dimen/normaLspacing"
+                android:layout_marginStart="35dp"
                 android:text="1. Introduction"
                 android:textSize="14dp"
                 android:textColor="@color/black"
@@ -79,8 +80,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="@dimen/normaLspacing"
+                android:layout_marginStart="35dp"
                 android:text="Welcome to Thrift and Thrive"
                 android:textSize="14dp"
                 android:textColor="@color/PriceGray"
@@ -89,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages.
 
@@ -105,7 +106,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="2. Communictaion"
                 android:textSize="14dp"
@@ -115,7 +116,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="By using our Service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send. However, you may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at support@lookclassy.com.
 
@@ -129,7 +130,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="2. Purchase"
                 android:textSize="14dp"
@@ -139,7 +140,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="If you wish to purchase any product or service made available through Service (“Purchase”), you may be asked to supply certain information relevant to your Purchase including but not limited to, your credit or debit card number, the expiration date of your card, your billing address, and your shipping information.
 
@@ -162,7 +163,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="3. Refunds"
                 android:textSize="14dp"
@@ -172,7 +173,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="We issue refunds for Contracts within 30 days of the original purchase of the Contract.
 "
@@ -186,7 +187,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="4. Content"
                 android:textSize="14dp"
@@ -196,7 +197,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="Content found on or through this Service are the property of Look Classy or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.
 
@@ -210,7 +211,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="5. Prohibited Users"
                 android:textSize="14dp"
@@ -220,7 +221,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="You may use Service only for lawful purposes and in accordance with Terms. You agree not to use Service:
 
@@ -247,7 +248,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="7. Termination"
                 android:textSize="14dp"
@@ -257,7 +258,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="We may terminate or suspend your account and bar access to Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of Terms.
 
@@ -276,7 +277,7 @@ All provisions of Terms which by their nature should survive termination shall s
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="8. Governing Law"
                 android:textSize="14dp"
@@ -286,7 +287,7 @@ All provisions of Terms which by their nature should survive termination shall s
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="These Terms shall be governed and construed in accordance with the laws of Nepal, which governing law applies to agreement without regard to its conflict of law provisions.
 
@@ -302,7 +303,7 @@ Our failure to enforce any right or provision of these Terms will not be conside
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="9. Acknowledgement"
                 android:textSize="14dp"
@@ -312,7 +313,7 @@ Our failure to enforce any right or provision of these Terms will not be conside
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="@dimen/normaLspacing"
                 android:text="BY USING SERVICE OR OTHER SERVICES PROVIDED BY US, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND AGREE TO BE BOUND BY THEM."
                 android:justificationMode="inter_word"

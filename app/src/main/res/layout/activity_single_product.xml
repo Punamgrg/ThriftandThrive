@@ -94,12 +94,41 @@
 
             </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_baseline_storefront_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="Sold by"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="@dimen/largeSpacing"
+                    android:text="Punam Gurung"
+                     />
+            </RelativeLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/normaLspacing"
+                android:layout_marginTop="@dimen/normaLspacing"
                 android:layout_weight="1"
                 android:text="Description"
                 android:textColor="@color/black"
@@ -147,6 +176,9 @@
             android:text="Add To Cart"
             android:textColor="@color/white"
             android:textSize="18sp" />
+
+
+
 
 
     </LinearLayout>
