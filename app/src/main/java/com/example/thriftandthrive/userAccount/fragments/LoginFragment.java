@@ -57,7 +57,12 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         if(!response.body().getError()){
                             Toast.makeText(getActivity(), "You'" + "re successfully logged in", Toast.LENGTH_SHORT).show();
                             SharedPrefUtils.setString(getActivity(),getString(R.string.api_key),loginResponse.getApiKey());
-                           // Toast.makeText(getActivity(),SharedPrefUtils.getString(getActivity(),getString(R.string.api_key)),Toast.LENGTH_SHORT).show();
+                            SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLogged), true);
+                            SharedPrefUtils.setString(getActivity(), getString(R.string.name_key), loginResponse.getName());
+                            SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
+                            SharedPrefUtils.setString(getActivity(), getString(R.string.created_key), loginResponse.getCreatedAt());
+                            SharedPrefUtils.setBoolean(getActivity(),  getString(R.string.staff_key), loginResponse.getIsStaff());
+                            // Toast.makeText(getActivity(),SharedPrefUtils.getString(getActivity(),getString(R.string.api_key)),Toast.LENGTH_SHORT).show();
 //                            getActivity().startActivity(new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class :MainActivity.class));
 //                            getActivity().finish();
                             Intent intent = new Intent(getActivity(), MainActivity.class);
@@ -73,7 +78,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
                 @Override
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             });
@@ -84,7 +89,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         boolean validate = true;
         if (emailEt.getText().toString().isEmpty()
                 || passwordET.getText().toString().isEmpty()
-               ) {
+        ) {
             Toast.makeText(getActivity(), "None of the above fields can be empty", Toast.LENGTH_SHORT).show();
             validate = false;
         } else{
@@ -96,6 +101,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
 
 }
+
+
+
+
 
 
 

@@ -62,16 +62,16 @@
             android:scaleType="centerCrop"
             android:src="@drawable/cod"
             app:civ_border_color="@color/ttcolor"
-            app:civ_circle_background_color="@color/ttcolor"></de.hdodenhof.circleimageview.CircleImageView>
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="150dp"-->
-<!--                    android:layout_marginLeft="80dp"-->
-<!--                    android:layout_marginTop="30dp"-->
-<!--                    android:layout_marginRight="80dp"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:src="@drawable/ic_google"-->
-<!--                    app:civ_border_color="@color/primary" />-->
+            app:civ_circle_background_color="@color/ttcolor"/>
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="150dp"-->
+        <!--            android:layout_marginLeft="80dp"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_marginRight="80dp"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/ic_google"-->
+        <!--            app:civ_border_color="@color/primary" />-->
 
         <TextView
             android:id="@+id/profileNameTV"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:lines="2"
-            android:text="Punam Gurung"
+            android:text="Swastika Rawat"
             android:textColor="@color/ttcolor"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -116,10 +116,11 @@
             android:textSize="16dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/fullnameET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Punam Gurung"
+            android:text="Swastika Chettri"
             android:layout_marginLeft="20dp"
             android:textSize="16dp"/>
 
@@ -159,10 +160,11 @@
             android:textSize="16dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="punamgrg614gmail.com"
+            android:text="chhetri.swas@gmail.com"
             android:layout_marginLeft="55dp"
             android:textSize="16dp"/>
 
@@ -202,13 +204,22 @@
             android:textColor="@color/black"
             android:textSize="16dp"
             />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/phnnumberET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="98460447896"
+            android:text="9815164948"
             android:layout_marginLeft="20dp"
             android:textSize="16dp"/>
+
+
+        <!--        <EditText-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="98460447896"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:fontFamily="@font/poppins_regular"-->
+        <!--            android:textSize="16dp"/>-->
 
 
     </LinearLayout>
@@ -244,10 +255,11 @@
             android:textSize="16dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/dobET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="29/March/2002"
+            android:text="19/March/2001"
             android:layout_marginLeft="25dp"
             android:textSize="16dp"/>
 
@@ -265,28 +277,26 @@
 
 
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/editLL"-->
-<!--        android:layout_width="190dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:background="@drawable/profilebox_shape"-->
-<!--        android:onClick="onLoginClicked"-->
-<!--        android:orientation="vertical">-->
-<!--        <TextView-->
-<!--            android:id="@+id/editTV"-->
-<!--            android:layout_width="190dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Edit Profile"-->
-<!--            android:textColor="@color/ttcolor"-->
-<!--            android:textSize="16sp"-->
-<!--            android:drawableLeft="@drawable/ic_edit"-->
-<!--            android:paddingStart="50dp"-->
-<!--            android:layout_marginLeft="-20dp"/>-->
+    <LinearLayout
+        android:id="@+id/updateprofileLL"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/profilebox_shape"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Update"
+            android:textColor="@color/ttcolor"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_edit"
+            android:paddingStart="50dp"
+            android:layout_marginLeft="-20dp"/>
 
-<!--    </LinearLayout>-->
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/changePasswordLL"
@@ -298,7 +308,7 @@
         android:onClick="onLoginClicked"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/changepwrdTV"
+
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:gravity="center"
@@ -310,27 +320,342 @@
             android:layout_marginLeft="-20dp"/>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/updateprofileLL"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rect_box"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:text="Update Profile"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
-
-
-    </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/ttcolor">-->
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/profilebackIV"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/largeSpacing"-->
+<!--                android:layout_marginTop="@dimen/largeSpacing"-->
+<!--                android:layout_marginEnd="@dimen/largeSpacing"-->
+<!--                android:layout_marginBottom="@dimen/largeSpacing"-->
+<!--                android:elevation="20dp"-->
+<!--                android:src="@drawable/ic_back"-->
+<!--                app:tint="@color/white" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Edit Profile"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="18sp"-->
+
+<!--                />-->
+
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/profileIV"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_marginLeft="80dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="80dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:padding="5dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/cod"-->
+<!--            app:civ_border_color="@color/ttcolor"-->
+<!--            app:civ_circle_background_color="@color/ttcolor"></de.hdodenhof.circleimageview.CircleImageView>-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/profileNameTV"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:lines="2"-->
+<!--            android:text="Punam Gurung"-->
+<!--            android:textColor="@color/ttcolor"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@color/ttcolor" />-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_me" />-->
+<!--        <TextView-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Full Name"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="7dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16dp"-->
+<!--            />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/nameET"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="19dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:text="Punam Gurung"-->
+<!--            android:textSize="16dp" />-->
+
+
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"/>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_email" />-->
+<!--        <TextView-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Email"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="7dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16dp"-->
+<!--            />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/emailET"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="punamgrg614gmail.com"-->
+<!--            android:layout_marginLeft="55dp"-->
+<!--            android:textSize="16dp"/>-->
+
+
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"/>-->
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_phone" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/phnnumberET"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Phone No:"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="7dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16dp"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="98460447896"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textSize="16dp"/>-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:src="@drawable/ic_calender" />-->
+<!--        <TextView-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Birthday"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16dp"-->
+<!--            />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/dobET"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="29/March/2002"-->
+<!--            android:layout_marginLeft="25dp"-->
+<!--            android:textSize="16dp"/>-->
+
+
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"/>-->
+
+
+
+<!--&lt;!&ndash;    <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/editLL"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="190dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="30dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="@drawable/profilebox_shape"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:onClick="onLoginClicked"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:orientation="vertical">&ndash;&gt;-->
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/editTV"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="190dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Edit Profile"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/ttcolor"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="16sp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:drawableLeft="@drawable/ic_edit"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:paddingStart="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="-20dp"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/changePasswordLL"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/profilebox_shape"-->
+<!--        android:onClick="onLoginClicked"-->
+<!--        android:orientation="vertical">-->
+<!--        <TextView-->
+<!--            android:id="@+id/changepwrdTV"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Change Password"-->
+<!--            android:textColor="@color/ttcolor"-->
+<!--            android:textSize="16sp"-->
+<!--            android:drawableLeft="@drawable/ic_padlock"-->
+<!--            android:paddingStart="50dp"-->
+<!--            android:layout_marginLeft="-20dp"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/updateprofileLL"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="51dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:background="@drawable/rect_box"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:text="Update Profile"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="18sp" />-->
+
+
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->

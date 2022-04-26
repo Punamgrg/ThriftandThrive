@@ -5,6 +5,7 @@ import com.example.thriftandthrive.api.response.AllProductResponse;
 import com.example.thriftandthrive.api.response.CategoryResponse;
 import com.example.thriftandthrive.api.response.DashResponse;
 import com.example.thriftandthrive.api.response.LoginResponse;
+import com.example.thriftandthrive.api.response.OrderHistoryResponse;
 import com.example.thriftandthrive.api.response.RegisterResponse;
 import com.example.thriftandthrive.api.response.SliderResponse;
 
@@ -91,10 +92,30 @@ public interface ApiService {
     @Multipart
     @POST("/ecommerce/api/v1/upload-category")
     Call<RegisterResponse> uploadCategory(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part file,
             @Part("name") RequestBody name);
 
     @GET ("/ecommerce/api/v1/dash")
     Call<DashResponse> getDash(@Header("api_key") String apikey);
+
+
+    @FormUrlEncoded
+    @POST("api/v1/forget-password")
+    Call<RegisterResponse> forgotpassword(@Header("api_key") String apikey, @Field("password") String password);
+
+//    Call<RegisterResponse> updateProfile(String key, String names, String email, String dateofbirth, String contact);
+
+
+    @FormUrlEncoded
+    @POST("/api/v1/updateProfile")
+    Call<RegisterResponse> updateProfile(@Header("api_key") String apikey,
+                                         @Field("name") String names,
+                                         @Field("email") String email,
+                                         @Field("dateofbirth") String dob,
+                                         @Field("phnnumber") String phonenumber);
+
+    @GET("ecommerce/api/v1/order")
+    Call<OrderHistoryResponse> orderHistory(@Header("api_key") String apikey
+    );
 }

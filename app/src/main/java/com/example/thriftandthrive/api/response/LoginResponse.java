@@ -23,6 +23,9 @@ public class LoginResponse {
         @SerializedName("message")
         @Expose
         private String message;
+        @SerializedName("is_staff")
+        @Expose
+        private Boolean isStaff;
 
         public Boolean getError() {
             return error;
@@ -70,6 +73,14 @@ public class LoginResponse {
 
         public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Boolean getIsStaff() {
+        return isStaff;
+    }
+
+    public void setIsStaff(Boolean isStaff) {
+        this.isStaff = isStaff;
     }
 
 

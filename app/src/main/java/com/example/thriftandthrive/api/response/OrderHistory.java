@@ -19,6 +19,11 @@ private Integer paymentType;
 @SerializedName("payment_refrence")
 @Expose
 private String paymentRefrence;
+    @SerializedName("status")
+    @Expose
+    private Integer Status;
+
+
 @SerializedName("bag")
 @Expose
 private List<Bag> bag = null;
@@ -54,6 +59,14 @@ return paymentRefrence;
 public void setPaymentRefrence(String paymentRefrence) {
 this.paymentRefrence = paymentRefrence;
 }
+
+    public Integer getStatus() {
+        return Status;
+    }
+
+    public void setStatus(Integer Status) {
+        this.Status = Status;
+    }
 
 public List<Bag> getBag() {
 return bag;

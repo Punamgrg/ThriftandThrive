@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.checkout.orderhistory.OrderActivity;
 import com.example.thriftandthrive.more.AboutUsActivity;
 import com.example.thriftandthrive.more.ContactusActivity;
 import com.example.thriftandthrive.more.ProfileActivity;
@@ -24,7 +25,7 @@ public class MoreFragment extends Fragment {
     TextView profileTV;
     TextView adminAreaTV;
     TextView policiesTV;
-    TextView aboutusTV, contactusTV;
+    TextView aboutusTV, contactusTV, orderHistoryTV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +44,7 @@ public class MoreFragment extends Fragment {
         policiesTV = view.findViewById(R.id.policiesTV);
         aboutusTV = view.findViewById(R.id.aboutusTV);
         contactusTV = view.findViewById(R.id.contactusTV);
+        orderHistoryTV = view.findViewById(R.id.orderhistoryTV);
         contactusOnClick();
         checkAdmin();
         setClickListeners();
@@ -126,6 +128,14 @@ public class MoreFragment extends Fragment {
                 getActivity().finish();
             }
         });
+        orderHistoryTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), OrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
 //        adminAreaTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
