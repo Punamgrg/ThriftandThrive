@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.admin.AdminActivity;
 import com.example.thriftandthrive.api.ApiClient;
 import com.example.thriftandthrive.api.response.LoginResponse;
 import com.example.thriftandthrive.home.MainActivity;
@@ -65,8 +66,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                             // Toast.makeText(getActivity(),SharedPrefUtils.getString(getActivity(),getString(R.string.api_key)),Toast.LENGTH_SHORT).show();
 //                            getActivity().startActivity(new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class :MainActivity.class));
 //                            getActivity().finish();
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            Intent intent = new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class : MainActivity.class);
                             startActivity(intent);
+//                            new Intent(getActivity(),
                         }else{
                             Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }

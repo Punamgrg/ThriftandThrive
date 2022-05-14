@@ -1,9 +1,9 @@
-package com.example.organicgrocery.utils;
+package com.example.thriftandthrive.utils;
 
 import android.app.Activity;
 import android.view.View;
 
-import com.example.organicgrocery.R;
+import com.example.thriftandthrive.R;
 
 public class UserInterfaceUtils {
 
@@ -18,7 +18,7 @@ public class UserInterfaceUtils {
 
     public static void changeStatusBarColor(Activity activity, boolean primary) {
         if (primary)
-            activity.getWindow().setStatusBarColor(activity.getResources().getColor(R.color.primary));
+            activity.getWindow().setStatusBarColor(activity.getResources().getColor(R.color.ttcolor));
         else
             activity.getWindow().setStatusBarColor(activity.getResources().getColor(R.color.white));
 

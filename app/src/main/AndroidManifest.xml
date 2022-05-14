@@ -16,6 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThriftandThrive"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
         tools:replace="android:theme">
         <activity
             android:name=".checkout.orderhistory.OrderHistoryActivity"
@@ -34,10 +36,12 @@
             android:exported="true" />
         <activity
             android:name=".admin.addproduct.AddProductActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
         <activity
             android:name=".admin.addcategory.ListCategoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
         <activity
             android:name=".admin.AdminActivity"
             android:exported="true" />
@@ -102,6 +106,15 @@
             android:name=".home.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovide"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

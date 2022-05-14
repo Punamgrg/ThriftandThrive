@@ -58,7 +58,7 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_about_us.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_add_address.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_add_category.xml" value="0.1" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_add_product.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_add_product.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_address.xml" value="0.15849056603773584" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_admin.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_category.xml" value="0.25416666666666665" />
@@ -67,15 +67,15 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_checkout.xml" value="0.1791044776119403" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_complete_order.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_contactus.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_list_category.xml" value="0.11458333333333333" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_list_product.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_list_category.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_list_product.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order.xml" value="0.11510416666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_compelte.xml" value="0.152" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_complete.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_history.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_history.xml" value="0.4" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_history2.xml" value="0.11145833333333334" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_history_details.xml" value="0.11510416666666666" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_order_history_details.xml" value="0.4" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_search.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_shared_pref_utils.xml" value="0.25416666666666665" />
@@ -85,13 +85,14 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/activity_user_account.xml" value="0.176" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/custom_dialog_add_category.xml" value="0.176" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_cart.xml" value="0.264" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_category.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_favourites.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_more.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_profile.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/fragment_wishlist.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/historydetails.xml" value="0.11510416666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_add_category.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_address.xml" value="0.2578125" />
@@ -103,6 +104,7 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_product_admin.xml" value="0.2578125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_search.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_slider.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/item_wishlist.xml" value="0.264" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/layout/products.xml" value="0.4" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/ThriftandThrive2/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
       </map>

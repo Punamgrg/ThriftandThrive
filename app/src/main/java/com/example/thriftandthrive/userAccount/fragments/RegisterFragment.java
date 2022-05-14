@@ -22,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterFragment extends Fragment {
-    EditText emailET, passwordET, confirmPasswordET, nameET;
+    EditText emailET, passwordET, confirmPassET, nameET;
     LinearLayout registerLL;
     ProgressBar circularProgress;
 
@@ -41,7 +41,7 @@ public class RegisterFragment extends Fragment {
         emailET = view.findViewById(R.id.emailET);
         nameET = view.findViewById(R.id.nameET);
         passwordET = view.findViewById(R.id.passwordET);
-        confirmPasswordET = view.findViewById(R.id.confirmPassET);
+        confirmPassET = view.findViewById(R.id.confirmPassET);
         circularProgress = view.findViewById(R.id.circularProgress);
         registerLL = view.findViewById(R.id.registerLL);
         registerLL.setOnClickListener(new View.OnClickListener() {
@@ -89,12 +89,12 @@ public class RegisterFragment extends Fragment {
         boolean validate = true;
         if (emailET.getText().toString().isEmpty()
                 || passwordET.getText().toString().isEmpty()
-                || confirmPasswordET.getText().toString().isEmpty()
+                || confirmPassET.getText().toString().isEmpty()
                 || nameET.getText().toString().isEmpty()) {
             Toast.makeText(getActivity(), "None of the above fields can be empty", Toast.LENGTH_SHORT).show();
             validate = false;
-        } else if (!passwordET.getText().toString().equals(confirmPasswordET.getText().toString())) {
-            confirmPasswordET.setError("Password doesnot match please check!!");
+        } else if (!passwordET.getText().toString().equals(confirmPassET.getText().toString())) {
+            confirmPassET.setError("Password doesnot match please check!!");
             validate = false;
 
         }

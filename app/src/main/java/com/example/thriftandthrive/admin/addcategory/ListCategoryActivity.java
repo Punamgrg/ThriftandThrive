@@ -26,14 +26,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ListCategoryActivity extends AppCompatActivity {
-    RecyclerView fullCategoryRV;
+    RecyclerView fullCatRV;
     ImageView catebackIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_category);
-        fullCategoryRV = findViewById(R.id.fullCategoryRV);
+        fullCatRV = findViewById(R.id.fullCatRV);
         catebackIV = findViewById(R.id.catebackIV);
         getOnline();
         setOnclickListeners();
@@ -66,10 +66,10 @@ public class ListCategoryActivity extends AppCompatActivity {
     }
 
     private void showCategoryView(List<Category> categories) {
-        fullCategoryRV.setHasFixedSize(true);
+        fullCatRV.setHasFixedSize(true);
         CategoryAdapter categoryAdapter = new CategoryAdapter(categories, this, false, false, this);
-        fullCategoryRV.setLayoutManager(new GridLayoutManager(this, 1));
-        fullCategoryRV.setAdapter(categoryAdapter);
+        fullCatRV.setLayoutManager(new GridLayoutManager(this, 1));
+        fullCatRV.setAdapter(categoryAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -98,7 +98,7 @@ public class ListCategoryActivity extends AppCompatActivity {
                 }
             }
         });
-        itemTouchHelper.attachToRecyclerView(fullCategoryRV);
+        itemTouchHelper.attachToRecyclerView(fullCatRV);
     }
 
     @Override

@@ -118,4 +118,18 @@ public interface ApiService {
     @GET("ecommerce/api/v1/order")
     Call<OrderHistoryResponse> orderHistory(@Header("api_key") String apikey
     );
+
+    @FormUrlEncoded
+    @POST("ecommerce/api/v1/wishlist")
+    Call<AllProductResponse> addtowishlist(@Header("api_key") String apikey, @Field("product_id") int p);
+
+    @GET("ecommerce/api/v1/wishlist")
+    Call<AllProductResponse> getMyWishlist(@Header("api_key") String apikey);
+
+    @DELETE("ecommerce/api/v1/wishlist")
+    Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("w_id") int wishlistID);
+
+    @FormUrlEncoded
+    @POST("ecommerce/api/v1/wishlistToCart")
+    Call<RegisterResponse> wishlistToCart(@Header("api_key") String apikey, @Field("wishlist_id") int wishlistID);
 }

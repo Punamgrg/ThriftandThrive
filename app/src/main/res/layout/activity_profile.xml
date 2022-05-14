@@ -60,7 +60,7 @@
             android:layout_gravity="center"
             android:padding="5dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cod"
+            android:src="@drawable/img_pro"
             app:civ_border_color="@color/ttcolor"
             app:civ_circle_background_color="@color/ttcolor"/>
         <!--            android:layout_width="wrap_content"-->
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:lines="2"
-            android:text="Swastika Rawat"
+            android:text="Punam Gurung"
             android:textColor="@color/ttcolor"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -120,7 +120,7 @@
             android:id="@+id/fullnameET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Swastika Chettri"
+            android:text="Pooh"
             android:layout_marginLeft="20dp"
             android:textSize="16dp"/>
 

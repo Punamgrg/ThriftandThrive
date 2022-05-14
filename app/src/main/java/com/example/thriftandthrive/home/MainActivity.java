@@ -14,6 +14,7 @@ import com.example.thriftandthrive.home.fragments.CartFragment;
 import com.example.thriftandthrive.home.fragments.CategoryFragment;
 import com.example.thriftandthrive.home.fragments.FavouritesFragment;
 import com.example.thriftandthrive.home.fragments.MoreFragment;
+import com.example.thriftandthrive.home.fragments.WishlistFragment;
 import com.example.thriftandthrive.home.fragments.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     CategoryFragment categoryFragment;
     MoreFragment moreFragment;
     Fragment currentFragment;
+    WishlistFragment wishlistFragment;
 
 
     @Override
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         homeFragment.setBottomNavigationView(bottomNavigationView);
         currentFragment = homeFragment;
+
         getSupportFragmentManager().beginTransaction().add(R.id.mainFrame, homeFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -59,12 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(cartFragment);
                     return true;
                 }
-                if (item.getTitle().equals(getString(R.string.favourites))) {
-                    if (favouritesFragment == null)
-                        favouritesFragment = new FavouritesFragment();
-                    changeFragment(favouritesFragment);
-                    return true;
-                }
+
                 if (item.getTitle().equals(getString(R.string.categories))){
                     if (categoryFragment== null)
                         categoryFragment = new CategoryFragment();
@@ -77,12 +75,14 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(moreFragment);
                     return true;
                 }
-//                if (item.getTitle().equals(getString(R.string.ca)) {
-//                    if (favouritesFragment == null)
-//                        favouritesFragment = new FavouritesFragment();
-//                    changeFragment(favouritesFragment);
-//                    return true;
-//                }
+                if (item.getTitle().equals("Wishlist")){
+                    if (wishlistFragment== null)
+                        wishlistFragment = new WishlistFragment();
+                    changeFragment(wishlistFragment);
+                    return true;
+                }
+
+
 
 
                 return false;

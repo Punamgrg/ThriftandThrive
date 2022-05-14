@@ -1,6 +1,11 @@
-package com.example.drugstoreskincare.Home.fragment;
+package com.example.thriftandthrive.home.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,25 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.example.drugstoreskincare.Home.fragment.home.adapters.WishlistAdapter;
-import com.example.drugstoreskincare.R;
-import com.example.drugstoreskincare.api.ApiClient;
-import com.example.drugstoreskincare.api.response.AllProductResponse;
-import com.example.drugstoreskincare.api.response.Product;
-import com.example.drugstoreskincare.api.response.RegisterResponse;
-import com.example.drugstoreskincare.utils.SharedPrefUtils;
+import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.api.ApiClient;
+import com.example.thriftandthrive.api.response.AllProductResponse;
+import com.example.thriftandthrive.api.response.Product;
+import com.example.thriftandthrive.api.response.RegisterResponse;
+import com.example.thriftandthrive.home.fragments.home.adapters.WishlistAdapter;
+import com.example.thriftandthrive.utils.SharedPrefUtils;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 
 public class WishlistFragment extends Fragment {
@@ -52,28 +52,22 @@ public class WishlistFragment extends Fragment {
         allWishlistProductRV = view.findViewById(R.id.allWishlistProductRV);
         swipeRefresh = view.findViewById(R.id.swipeRefresh);
         emptyWishlistIV = view.findViewById(R.id.emptyWishlistIV);
-        swipeRefresh.setOnClickListener(new View.OnClickListener() {
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onClick(View view) {
-                swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        swipeRefresh.setRefreshing(true);
-                        getWishlistItems();
-                    }
-
-
-                });
+            public void onRefresh() {
+                swipeRefresh.setRefreshing(true);
                 getWishlistItems();
             }
         });
+
         getWishlistItems();
 
     }
 
     private void getWishlistItems() {
-       //load
-        String key = SharedPrefUtils.getSting(getActivity(), "apk");
+        //load
+        String key = SharedPrefUtils.getString(getActivity(), "apk");
         Call<AllProductResponse> wishItemsCall = ApiClient.getClient().getMyWishlist(key);
         wishItemsCall.enqueue(new Callback<AllProductResponse>() {
             @Override
@@ -103,29 +97,52 @@ public class WishlistFragment extends Fragment {
 
 
     private void showEmptyLayout() {
-
         emptyWishlistIV.setVisibility(View.VISIBLE);
     }
 
 
     private void loadWishList() {
         allWishlistProductRV.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         allWishlistProductRV.setLayoutManager(layoutManager);
         WishlistAdapter wishlistAdapter = new WishlistAdapter(products, getContext());
+//        wishlistAdapter.setRemoveEnabled(false);
         wishlistAdapter.setWishCartItemClick(new WishlistAdapter.WishlistCartItemClick() {
             @Override
-            public void onRemoveCart(int position) {
-                String key = SharedPrefUtils.getSting(getActivity(), "apk");
-                Call<RegisterResponse> removeCartCall = ApiClient.getClient().deleteFromCart(key, products.get(position).getCartID());
-                removeCartCall.enqueue(new Callback<RegisterResponse>() {
+            public void onRemoveWishlist(int position) {
+                String key = SharedPrefUtils.getString(getActivity(), "apk");
+                Call<RegisterResponse> deleteFromWishlistCall = ApiClient.getClient().deleteFromWishlist(key, products.get(position).getWishlistId());
+                deleteFromWishlistCall.enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         if (response.isSuccessful()) {
                             if (!response.body().getError()) {
                                 products.remove(products.get(position));
                                 wishlistAdapter.notifyItemChanged(position);
-                                Toast.makeText(getContext(), "Cart Item successfully deleted", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(), "Wishlist Item successfully deleted", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                    }
+
+                });
+            }
+
+            @Override
+            public void onMoveWishlistItemToCart(int position) {
+                String key = SharedPrefUtils.getString(getActivity(), "apk");
+                Call<RegisterResponse> wishlistToCartCall = ApiClient.getClient().wishlistToCart(key, products.get(position).getWishlistId());
+                wishlistToCartCall.enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()) {
+                            if (!response.body().getError()) {
+                                wishlistAdapter.notifyItemChanged(position);
+                                Toast.makeText(getContext(), "Wishlist Item moved to Cart", Toast.LENGTH_LONG).show();
                             }
                         }
                     }
@@ -138,6 +155,7 @@ public class WishlistFragment extends Fragment {
             }
         });
         allWishlistProductRV.setAdapter(wishlistAdapter);
+    }
     }
 
 
@@ -157,5 +175,5 @@ public class WishlistFragment extends Fragment {
 //            }
 //        });
 //    }
-    }
+
 

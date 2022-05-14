@@ -45,7 +45,6 @@ public class ShopAdapterAdmin extends RecyclerView.Adapter<ShopAdapterAdmin.Shop
         } else
             holder.discountPrice.setText("Rs. " + productDataList.get(position).getDiscountPrice() + "");
         holder.priceTv.setText(productDataList.get(position).getPrice() + "");
-        holder.quantityTV.setText(productDataList.get(position)+ " Units");
         Picasso.get().load(productDataList.get(position).getImages().get(0)).into(holder.productIV);
         holder.mainLL.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
     }

@@ -85,6 +85,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rect_box"
+            android:backgroundTint="#bb86fc"
             android:orientation="horizontal">
 
             <TextView

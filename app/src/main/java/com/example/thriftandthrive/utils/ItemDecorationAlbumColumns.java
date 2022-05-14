@@ -1,4 +1,4 @@
-package com.example.organicgrocery.utils;
+package com.example.thriftandthrive.utils;
 
 import android.graphics.Rect;
 import android.view.View;

@@ -20,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.admin.addcategory.ListCategoryActivity;
+import com.example.thriftandthrive.admin.addproduct.AddProductActivity;
+import com.example.thriftandthrive.admin.products.ListProductActivity;
 import com.example.thriftandthrive.api.ApiClient;
 import com.example.thriftandthrive.api.response.Dash;
 import com.example.thriftandthrive.api.response.DashResponse;
@@ -85,6 +88,21 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view) {
                 openAddCategoryView();
 
+            }
+        });
+        categoryList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, ListCategoryActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        productsLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, ListProductActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -221,5 +239,9 @@ public class AdminActivity extends AppCompatActivity {
         totalOrdersTV.setText(dash.getProcessingOrders().toString());
         shippedOrdersTV.setText(dash.getShippedOrders().toString());
         totalProductsTV.setText(dash.getProducts().toString());
+    }
+    public void addProduct(View view) {
+        Intent intent = new Intent(this, AddProductActivity.class);
+        startActivity(intent);
     }
 }

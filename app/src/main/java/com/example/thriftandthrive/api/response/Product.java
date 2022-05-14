@@ -29,6 +29,9 @@ public class Product implements Serializable {
     @SerializedName("categories")
     @Expose
     private List<Integer> categories = null;
+    @SerializedName("wishlist_id")
+    @Expose
+    private Integer wishlistId;
     @SerializedName("cart_id")
     @Expose
     private Integer cartID;
@@ -92,6 +95,13 @@ public class Product implements Serializable {
 
     public int getCartID() {
         return cartID;
+    }
+    public Integer getWishlistId() {
+        return wishlistId;
+    }
+
+    public void setWishlistId(Integer wishlistId) {
+        this.wishlistId = wishlistId;
     }
 }
 

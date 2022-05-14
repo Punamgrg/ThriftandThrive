@@ -1,4 +1,4 @@
-package com.example.drugstoreskincare.Home.fragment.home.adapters;
+package com.example.thriftandthrive.home.fragments.home.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,9 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.drugstoreskincare.R;
-import com.example.drugstoreskincare.api.response.Product;
-import com.example.drugstoreskincare.singleProductPage.SingleProductActivity;
+import com.example.thriftandthrive.R;
+import com.example.thriftandthrive.api.response.Product;
+import com.example.thriftandthrive.singleProductPage.SingleProductActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -23,7 +23,6 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
     List<Product> productDataList;
     LayoutInflater inflater;
     Context context;
-  //  WishLisItemClick wishlistItemClick;
     WishlistCartItemClick  wishlistCartItemClick ;
     Boolean removeEnabled = true;
 
@@ -41,7 +40,6 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
     }
 
     public void setRemoveEnabled(Boolean removeEnabled) {
-
         this.removeEnabled = removeEnabled;
     }
 
@@ -59,7 +57,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
             holder.WishDiscountPriceTV.setText("Rs." + productDataList.get(position).getPrice() + "");
         } else
             holder.WishDiscountPriceTV.setText("Rs." + productDataList.get(position).getDiscountPrice());
-            holder.WishOldPriceTV.setText(productDataList.get(position).getPrice() + "");
+        holder.WishOldPriceTV.setText(productDataList.get(position).getPrice() + "");
 
 
 
@@ -72,6 +70,20 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
                 productPage.putExtra(SingleProductActivity.SINGLE_DATA_KEY, productDataList.get(holder.getAdapterPosition()));
                 context.startActivity(productPage);
 
+            }
+        });
+
+        holder.WishRemoveIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                wishlistCartItemClick.onRemoveWishlist(holder.getAdapterPosition());
+            }
+        });
+
+        holder.moveToCartIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                wishlistCartItemClick.onMoveWishlistItemToCart(holder.getAdapterPosition());
             }
         });
 
@@ -91,7 +103,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
     }
 
     public class WishlistViewHolder extends RecyclerView.ViewHolder {
-        ImageView wishProductIV, WishRemoveIV;
+        ImageView wishProductIV, WishRemoveIV, moveToCartIV;
         TextView WishProductNameTV, WishOldPriceTV, WishDiscountPriceTV;
         LinearLayout WishlistCartLL,WishListMainLL;
 
@@ -104,11 +116,13 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
             WishDiscountPriceTV = itemView.findViewById(R.id.WishDiscountPriceTV);
             WishlistCartLL = itemView.findViewById(R.id.WishlistCartLL);
             WishListMainLL = itemView.findViewById(R.id.WishListMainLL);
+            moveToCartIV = itemView.findViewById(R.id.moveToCartIV);
         }
     }
 
 
     public interface WishlistCartItemClick {
-        public void onRemoveCart(int position);
+        void onRemoveWishlist(int position);
+        void onMoveWishlistItemToCart(int position);
     }
 }
